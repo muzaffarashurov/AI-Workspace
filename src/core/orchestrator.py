@@ -16,27 +16,18 @@ class Orchestrator:
         self.dispatcher = CommandDispatcher()
 
     def start(self):
-     print("=" * 45)
-     print(" AI Workspace Orchestrator v0.1")
-     print("=" * 45)
+        print("=" * 45)
+        print(" AI Workspace Orchestrator v0.1")
+        print("=" * 45)
 
-     text = input("\nВведите команду: ")
+        text = input("\nВведите команду: ")
 
-     command = self.router.parse(text)
+        command = self.router.parse(text)
+        plan = self.planner.build_plan(command.intent)
+        task = self.task_manager.create_task()
 
-     plan = self.planner.build_plan(command.intent)
+        print(f"\nIntent : {command.intent.value}")
+        print(f"Task ID: {task.task_id}")
+        print(f"Status : {task.status.value}")
 
-     task = self.task_manager.create_task()
-
-     print("\nКоманда распознана.")
-     print(f"\nIntent: {command.intent.value}")
-
-     print("\nПлан действий:")
-
-     for index, step in enumerate(plan.steps, start=1):
-         print(f"{index}. {step}")
-
-     print(f"\nTask ID: {task.task_id}")
-     print(f"Status : {task.status.value}")
-
-     self.dispatcher.dispatch(command)
+        self.dispatcher.dispatch(command, plan)

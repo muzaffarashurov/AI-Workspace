@@ -13,7 +13,7 @@ class CommandDispatcher:
             Intent.START_WORKDAY: StartWorkdayCommand(),
         }
 
-    def dispatch(self, command):
+    def dispatch(self, command, plan):
 
         handler = self._handlers.get(command.intent)
 
@@ -21,4 +21,4 @@ class CommandDispatcher:
             print("Команда пока не поддерживается.")
             return
 
-        handler.execute(command)
+        handler.execute(command, plan)

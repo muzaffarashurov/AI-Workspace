@@ -1,5 +1,6 @@
 from commands.base_command import BaseCommand
 from domain.command import Command
+from domain.plan import Plan
 
 
 class StartWorkdayCommand(BaseCommand):
@@ -7,14 +8,12 @@ class StartWorkdayCommand(BaseCommand):
     Обработчик команды 'Начни мой рабочий день'.
     """
 
-    def execute(self, command: Command):
+    def execute(self, command: Command, plan: Plan):
         print("\n========== Рабочий день ==========\n")
 
         print("Доброе утро, Музаффар!")
 
-        print("\nСегодня необходимо:")
+        print("\nПлан на сегодня:")
 
-        print("✔ Проверить Fast Response Board")
-        print("✔ Проверить новые накладные")
-        print("✔ Подготовить отчёт к 10:00")
-        print("✔ Проверить рабочую почту")
+        for index, step in enumerate(plan.steps, start=1):
+            print(f"{index}. {step}")
