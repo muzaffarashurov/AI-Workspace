@@ -1,3 +1,4 @@
+from commands.send_invoices import SendInvoicesCommand
 from commands.start_workday import StartWorkdayCommand
 from domain.command import Command, Intent
 from domain.plan import Plan
@@ -12,6 +13,7 @@ class CommandDispatcher:
 
         self._handlers = {
             Intent.START_WORKDAY: StartWorkdayCommand(),
+            Intent.SEND_INVOICES: SendInvoicesCommand(),
         }
 
     def dispatch(self, command: Command, plan: Plan) -> None:

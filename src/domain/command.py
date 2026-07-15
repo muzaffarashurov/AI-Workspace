@@ -6,6 +6,7 @@ class Intent(Enum):
     """Поддерживаемые намерения пользователя."""
 
     START_WORKDAY = "START_WORKDAY"
+    SEND_INVOICES = "SEND_INVOICES"
     UNKNOWN = "UNKNOWN"
 
 

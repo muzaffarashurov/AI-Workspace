@@ -3,6 +3,22 @@
 Формат: что реально изменилось, коротко. Дата = сессия работы, не обязательно
 дата коммита. Полный список задач и статус — в `project/BACKLOG.md`.
 
+## v0.2.2 — Команда "Отправь накладные" (IV-001)
+
+- Новый Intent `SEND_INVOICES`, фразы "отправь накладные" / "отправить накладные".
+- `src/commands/send_invoices.py` — запускает существующий
+  `InvoiceAutomation_Console_Mode_v4.2.2_headless.py` как подпроцесс,
+  с наследованием консоли (скрипт не переписан, только подключён).
+  Путь настраивается через `INVOICE_AUTOMATION_SCRIPT`.
+- `config/process_registry.py` — добавлен `INTENT_PROCESS` для обычных
+  (не day-of-week) намерений; `Planner._resolve_process()` теперь
+  проверяет оба реестра.
+- Обновлён `processes/invoices/IV-001_send_invoices.md` — шаги теперь
+  точно соответствуют реальному процессу (Telegram → копирование →
+  запуск программы → проверка статистики → ответ в канале).
+- Выполнено вне очереди: это объединяет запланированные Sprint 4.2 и 9.1
+  (см. `project/BACKLOG.md`).
+
 ## v0.2.1 — Code review fixes
 
 - `ProcessEngine.process_root` теперь строится через `Path(__file__).resolve()`,

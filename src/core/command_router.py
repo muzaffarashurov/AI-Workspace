@@ -9,6 +9,8 @@ class CommandRouter:
     def __init__(self):
         self._commands = {
             "начни мой рабочий день": Intent.START_WORKDAY,
+            "отправь накладные": Intent.SEND_INVOICES,
+            "отправить накладные": Intent.SEND_INVOICES,
         }
 
     def parse(self, text: str) -> Command:

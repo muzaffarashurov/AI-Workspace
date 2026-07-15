@@ -1,6 +1,6 @@
 from datetime import date
 
-from config.process_registry import WEEKDAY_PROCESS
+from config.process_registry import INTENT_PROCESS, WEEKDAY_PROCESS
 from domain.command import Intent
 from domain.plan import Plan
 from services.process_engine import ProcessEngine
@@ -36,4 +36,4 @@ class Planner:
             weekday = date.today().weekday()
             return WEEKDAY_PROCESS[weekday]
 
-        return None
+        return INTENT_PROCESS.get(intent)
