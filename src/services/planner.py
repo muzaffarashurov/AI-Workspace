@@ -1,5 +1,6 @@
 from datetime import date
 
+from config.process_registry import WEEKDAY_PROCESS
 from domain.command import Intent
 from domain.plan import Plan
 from services.process_engine import ProcessEngine
@@ -11,17 +12,6 @@ class Planner:
     используя описания процессов из Markdown.
     """
 
-    # date.weekday(): Monday=0 ... Sunday=6
-    WEEKDAY_PROCESS = {
-        0: "Workday/monday.md",
-        1: "Workday/tuesday.md",
-        2: "Workday/wednesday.md",
-        3: "Workday/thursday.md",
-        4: "Workday/friday.md",
-        5: "Workday/saturday.md",
-        6: "Workday/sunday.md",
-    }
-
     def __init__(self):
         self.process_engine = ProcessEngine()
 
@@ -31,7 +21,10 @@ class Planner:
         if process_name is None:
             return Plan(steps=["Команда не распознана"])
 
-        steps = self.process_engine.get_workflow_steps(process_name)
+        try:
+            steps = self.process_engine.get_workflow_steps(process_name)
+        except FileNotFoundError:
+            return Plan(steps=["Процесс не найден или пуст"])
 
         if not steps:
             return Plan(steps=["Процесс не найден или пуст"])
@@ -41,6 +34,6 @@ class Planner:
     def _resolve_process(self, intent: Intent):
         if intent == Intent.START_WORKDAY:
             weekday = date.today().weekday()
-            return self.WEEKDAY_PROCESS[weekday]
+            return WEEKDAY_PROCESS[weekday]
 
         return None

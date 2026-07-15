@@ -10,45 +10,45 @@
 
 | Префикс | Категория            | Папка                     |
 |---------|----------------------|-----------------------------|
-| WD      | Workday              | `Processes/Workday/`        |
-| RP      | Reports / Fast Response Board | `Processes/Reports/` |
-| IV      | Invoices             | `Processes/Invoices/`       |
-| QL      | Quality Engineering  | `Processes/Quality/`        |
-| MT      | Metrology            | `Processes/Metrology/`      |
-| PN      | Production Quality   | `Processes/Production/`     |
-| CM      | Communication        | `Processes/Communication/`  |
-| PS      | Presentations        | `Processes/Presentations/`  |
-| SD      | Software Development | `Processes/Development/`    |
-| LR      | Learning             | `Processes/Learning/`       |
-| KM      | Knowledge Management | `Processes/Knowledge/`      |
-| AW      | AI Workspace         | `Processes/Workspace/`      |
+| WD      | Workday              | `processes/workday/`        |
+| RP      | Reports / Fast Response Board | `processes/reports/` |
+| IV      | Invoices             | `processes/invoices/`       |
+| QL      | Quality Engineering  | `processes/quality/`        |
+| MT      | Metrology            | `processes/metrology/`      |
+| PN      | Production Quality   | `processes/production/`     |
+| CM      | Communication        | `processes/communication/`  |
+| PS      | Presentations        | `processes/presentations/`  |
+| SD      | Software Development | `processes/development/`    |
+| LR      | Learning             | `processes/learning/`       |
+| KM      | Knowledge Management | `processes/knowledge/`      |
+| AW      | AI Workspace         | `processes/workspace/`      |
 
 ## Текущие процессы
 
 | ID     | Название                                | Файл                                                     | Статус |
 |--------|-------------------------------------------|------------------------------------------------------------|--------|
-| WD-001 | Рабочий день — понедельник                | `Processes/Workday/monday.md`                               | Draft |
-| WD-002 | Рабочий день — вторник                    | `Processes/Workday/tuesday.md`                              | Draft, требует заполнения |
-| WD-003 | Рабочий день — среда                      | `Processes/Workday/wednesday.md`                            | Draft |
-| WD-004 | Рабочий день — четверг                    | `Processes/Workday/thursday.md`                             | Draft, требует заполнения |
-| WD-005 | Рабочий день — пятница                    | `Processes/Workday/friday.md`                               | Draft |
-| WD-006 | Рабочий день — суббота                    | `Processes/Workday/saturday.md`                             | Draft, требует заполнения |
-| WD-007 | Рабочий день — воскресенье                | `Processes/Workday/sunday.md`                               | Draft, требует заполнения |
-| PN-001 | Production Defect Report                  | `Processes/Production/P001_Production_Defect_Report.md`     | Active |
-| QL-001 | Расследование производственного дефекта   | `Processes/Quality/QL-001_defect_investigation.md`          | Active |
-| MT-001 | Измерение стекла (CALYPSO)                | `Processes/Metrology/MT-001_calypso_measurement.md`         | Active |
-| MT-002 | Измерение стекла (HOLOS)                  | `Processes/Metrology/MT-002_holos_measurement.md`           | Active |
-| IV-001 | Отправка накладных                        | `Processes/Invoices/IV-001_send_invoices.md`                | Active |
-| RP-001 | Контроль Fast Response Board              | `Processes/Reports/RP-001_fast_response_board.md`           | Draft |
-| CM-001 | Техническая коммуникация (BYD)            | `Processes/Communication/CM-001_byd_communication.md`       | Draft, требует заполнения |
-| CM-002 | Техническая коммуникация (UzAuto)         | `Processes/Communication/CM-002_uzauto_communication.md`    | Draft, требует заполнения |
-| CM-003 | Техническая коммуникация (ZEISS)          | `Processes/Communication/CM-003_zeiss_communication.md`     | Draft, требует заполнения |
-| PS-001 | Подготовка презентаций (PowerPoint)       | `Processes/Presentations/PS-001_powerpoint.md`               | Draft, требует заполнения |
-| SD-001 | Разработка ПО (Java)                      | `Processes/Development/SD-001_java.md`                       | Active |
-| SD-002 | Разработка ПО (Python)                    | `Processes/Development/SD-002_python.md`                     | Active |
-| LR-001 | Изучение AI                               | `Processes/Learning/LR-001_ai_learning.md`                   | Active |
-| KM-001 | Управление знаниями (База знаний)         | `Processes/Knowledge/KM-001_knowledge_base.md`                | Active |
-| AW-001 | Развитие AI Workspace                     | `Processes/Workspace/AW-001_ai_workspace_development.md`     | Active |
+| WD-001 | Рабочий день — понедельник                | `processes/workday/monday.md`                               | Draft |
+| WD-002 | Рабочий день — вторник                    | `processes/workday/tuesday.md`                              | Draft, требует заполнения |
+| WD-003 | Рабочий день — среда                      | `processes/workday/wednesday.md`                            | Draft |
+| WD-004 | Рабочий день — четверг                    | `processes/workday/thursday.md`                             | Draft, требует заполнения |
+| WD-005 | Рабочий день — пятница                    | `processes/workday/friday.md`                               | Draft |
+| WD-006 | Рабочий день — суббота                    | `processes/workday/saturday.md`                             | Draft, требует заполнения |
+| WD-007 | Рабочий день — воскресенье                | `processes/workday/sunday.md`                               | Draft, требует заполнения |
+| PN-001 | Production Defect Report                  | `processes/production/P001_Production_Defect_Report.md`     | Active |
+| QL-001 | Расследование производственного дефекта   | `processes/quality/QL-001_defect_investigation.md`          | Active |
+| MT-001 | Измерение стекла (CALYPSO)                | `processes/metrology/MT-001_calypso_measurement.md`         | Active |
+| MT-002 | Измерение стекла (HOLOS)                  | `processes/metrology/MT-002_holos_measurement.md`           | Active |
+| IV-001 | Отправка накладных                        | `processes/invoices/IV-001_send_invoices.md`                | Active |
+| RP-001 | Контроль Fast Response Board              | `processes/reports/RP-001_fast_response_board.md`           | Draft |
+| CM-001 | Техническая коммуникация (BYD)            | `processes/communication/CM-001_byd_communication.md`       | Draft, требует заполнения |
+| CM-002 | Техническая коммуникация (UzAuto)         | `processes/communication/CM-002_uzauto_communication.md`    | Draft, требует заполнения |
+| CM-003 | Техническая коммуникация (ZEISS)          | `processes/communication/CM-003_zeiss_communication.md`     | Draft, требует заполнения |
+| PS-001 | Подготовка презентаций (PowerPoint)       | `processes/presentations/PS-001_powerpoint.md`               | Draft, требует заполнения |
+| SD-001 | Разработка ПО (Java)                      | `processes/development/SD-001_java.md`                       | Active |
+| SD-002 | Разработка ПО (Python)                    | `processes/development/SD-002_python.md`                     | Active |
+| LR-001 | Изучение AI                               | `processes/learning/LR-001_ai_learning.md`                   | Active |
+| KM-001 | Управление знаниями (База знаний)         | `processes/knowledge/KM-001_knowledge_base.md`                | Active |
+| AW-001 | Развитие AI Workspace                     | `processes/workspace/AW-001_ai_workspace_development.md`     | Active |
 
 ## Решения, принятые при переносе таблицы в Markdown
 

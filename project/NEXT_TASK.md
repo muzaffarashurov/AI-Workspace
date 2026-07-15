@@ -13,17 +13,17 @@ Sprint 3 — Заполнение базы знаний (без кода)
 
 ## Current Task
 
-3.1 — Заполнить `Processes/Workday/tuesday.md` реальными шагами.
+3.1 — Заполнить `processes/workday/tuesday.md` реальными шагами.
 
 Файл сейчас содержит честный TODO (не выдуманный контент). Нужны реальные
 данные от пользователя: что происходит во вторник, если это не день Fast
-Response Board (тот — по Пн/Ср/Пт, см. `Processes/Production/P001_Production_Defect_Report.md`).
+Response Board (тот — по Пн/Ср/Пт, см. `processes/production/P001_Production_Defect_Report.md`).
 
 ---
 
 ## Definition of Done
 
-- В `Processes/Workday/tuesday.md` секция `## Workflow` содержит реальные
+- В `processes/workday/tuesday.md` секция `## Workflow` содержит реальные
   шаги, а не `TODO`.
 - Убедиться, что `ProcessEngine.get_workflow_steps()` их корректно парсит.
 - Отметить пункт 3.1 в `project/BACKLOG.md` как `[x]`.

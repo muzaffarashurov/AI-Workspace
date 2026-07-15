@@ -62,8 +62,8 @@
 
 ## Related Processes
 
-- PN-001 (шаги 2–7 подробно описаны здесь: `Processes/Production/P001_Production_Defect_Report.md`)
-- IV-001 (шаг 10, подробности — черновик: `Processes/Invoices/IV-001_send_invoices.md`)
+- PN-001 (шаги 2–7 подробно описаны здесь: `processes/production/P001_Production_Defect_Report.md`)
+- IV-001 (шаг 10, подробности — черновик: `processes/invoices/IV-001_send_invoices.md`)
 
 ---
 

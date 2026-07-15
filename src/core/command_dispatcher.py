@@ -1,5 +1,6 @@
 from commands.start_workday import StartWorkdayCommand
-from domain.command import Intent
+from domain.command import Command, Intent
+from domain.plan import Plan
 
 
 class CommandDispatcher:
@@ -13,7 +14,7 @@ class CommandDispatcher:
             Intent.START_WORKDAY: StartWorkdayCommand(),
         }
 
-    def dispatch(self, command, plan):
+    def dispatch(self, command: Command, plan: Plan) -> None:
 
         handler = self._handlers.get(command.intent)
 

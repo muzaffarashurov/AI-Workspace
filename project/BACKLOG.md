@@ -22,20 +22,42 @@
 ## Sprint 2 — Markdown & Process Engine (v0.2)
 
 - [x] 2.1 `ProcessEngine.get_workflow_steps()` — парсинг `## Workflow` из Markdown
-- [x] 2.2 `Planner` берёт шаги из `Processes/`, хардкод убран
+- [x] 2.2 `Planner` берёт шаги из `processes/`, хардкод убран
 - [x] 2.3 Убрано дублирование плана между `Planner` и `StartWorkdayCommand`
-- [x] 2.4 Weekday-routing: "начни мой рабочий день" → `Processes/Workday/{день}.md`
+- [x] 2.4 Weekday-routing: "начни мой рабочий день" → `processes/workday/{день}.md`
 - [x] 2.5 `tests/test_planner.py` — 3 теста
 - [x] 2.6 Импорт реального каталога процессов (19 строк из xlsx → 21 md-файл),
       ID-схема WD/RP/IV/QL/MT/PN/CM/PS/SD/LR/KM/AW, `Docs/PROCESS_CATALOG.md`
+- [x] 2.7 Code review fixes: `ProcessEngine` — путь через `Path(__file__)` вместо
+      cwd (работает из pytest/Docker/любой директории); каталог `processes/`
+      переведён в единый нижний регистр целиком; `get_process()` бросает
+      `FileNotFoundError` вместо `None`; `WEEKDAY_PROCESS` вынесен в
+      `src/config/process_registry.py`; типизация в `CommandDispatcher.dispatch()`;
+      тесты избавлены от хрупких точных сравнений
+
+## Sprint 2.5 — Качество архитектуры (предложено, код не писать пока)
+
+> Из code review: "Мы всё это время строили не тот объект. Мы строили Command.
+> Главным объектом должен стать Process." Здесь фиксируется план, реализация —
+> отдельным спринтом, после Sprint 3/4.
+
+- [ ] 2.5.1 Ввести dataclass `Process` (process_id, name, category, trigger,
+      schedule, workflow, expected_result) — `ProcessEngine` возвращает `Process`,
+      а не список строк
+- [ ] 2.5.2 Разделить `Process → Workflow → Planner → Plan` явно (сейчас Planner
+      фактически строит Workflow, а не Plan)
+- [ ] 2.5.3 Логирование через `logging` вместо `print`, с переключением
+      dev/prod режимов
+- [ ] 2.5.4 Настроить `ruff` (линтер) и `black` (форматирование)
+- [ ] 2.5.5 `pytest` как единая команда запуска тестов (уже работает, закрепить в CI)
 
 ## Sprint 3 — Заполнение базы знаний (без кода)
 
-- [ ] 3.1 Заполнить `Processes/Workday/tuesday.md` реальными шагами
-- [ ] 3.2 Заполнить `Processes/Workday/thursday.md` реальными шагами
-- [ ] 3.3 Заполнить `Processes/Workday/saturday.md` и `sunday.md` (или пометить нерабочими)
-- [ ] 3.4 Заполнить `Processes/Communication/CM-001/002/003` (BYD/UzAuto/ZEISS)
-- [ ] 3.5 Заполнить `Processes/Presentations/PS-001` (PowerPoint)
+- [ ] 3.1 Заполнить `processes/workday/tuesday.md` реальными шагами
+- [ ] 3.2 Заполнить `processes/workday/thursday.md` реальными шагами
+- [ ] 3.3 Заполнить `processes/workday/saturday.md` и `sunday.md` (или пометить нерабочими)
+- [ ] 3.4 Заполнить `processes/communication/CM-001/002/003` (BYD/UzAuto/ZEISS)
+- [ ] 3.5 Заполнить `processes/presentations/PS-001` (PowerPoint)
 
 ## Sprint 4 — Подключить больше команд (код)
 
@@ -82,4 +104,4 @@
 
 ## ▶ CURRENT
 
-Sprint 3, пункт 3.1 — заполнить `Processes/Workday/tuesday.md` реальными шагами.
+Sprint 3, пункт 3.1 — заполнить `processes/workday/tuesday.md` реальными шагами.

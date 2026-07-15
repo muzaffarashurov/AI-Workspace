@@ -10,29 +10,35 @@ class ProcessEngine:
     _STEP_PATTERN = re.compile(r"^\d+\.\s*(.+)$")
 
     def __init__(self):
-        self.process_root = Path("Processes")
+        # __file__ = src/services/process_engine.py
+        # parents[0] = services, [1] = src, [2] = корень проекта.
+        # Работает независимо от того, откуда запущен процесс
+        # (python src/main.py, pytest, python -m src.main, Docker и т.д.).
+        project_root = Path(__file__).resolve().parents[2]
+        self.process_root = project_root / "processes"
 
-    def get_process(self, process_name: str):
+    def get_process(self, process_name: str) -> str:
+        """
+        Возвращает содержимое файла процесса.
+        Бросает FileNotFoundError, если файл отсутствует —
+        вместо None, чтобы явно отличать "файла нет" от "файл пустой".
+        """
+
         process_file = self.process_root / process_name
 
-        if process_file.exists():
+        if not process_file.exists():
+            raise FileNotFoundError(f"Процесс не найден: {process_file}")
 
-            return process_file.read_text(
-                encoding="utf-8"
-            )
-
-        return None
+        return process_file.read_text(encoding="utf-8")
 
     def get_workflow_steps(self, process_name: str) -> list[str]:
         """
         Извлекает шаги из секции '## Workflow' процесса.
-        Возвращает пустой список, если процесс не найден.
+        Пробрасывает FileNotFoundError, если процесс не найден —
+        обработка на уровне Planner.
         """
 
         content = self.get_process(process_name)
-
-        if content is None:
-            return []
 
         steps = []
         in_workflow = False
